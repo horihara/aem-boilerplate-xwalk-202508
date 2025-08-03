@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/horihara-universal-editor-xwalk-202508/:/",
+    "/content/horihara-universal-editor-xwalk-202508/configuration:/.helix/config.json",
+    "/content/horihara-universal-editor-xwalk-202508/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/horihara-universal-editor-xwalk-202508/"
   ]
 }
