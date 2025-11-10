@@ -159,14 +159,14 @@
         },
         {
           "title": "Image Map",
-          "id": "image-map",
+          "id": "imagemap",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Image Map",
-                  "model": "image-map"
+                  "model": "imagemap"
                 }
               }
             }

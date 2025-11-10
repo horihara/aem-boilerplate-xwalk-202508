@@ -12,7 +12,7 @@ export default function decorate(block) {
   // 画像作成
   const img = document.createElement("img");
   img.src = imgUrl;
-  img.alt = altText || "DEBUG ALT TEXT";
+  img.alt = altText;
   container.appendChild(img);
 
   // クリックエリア要素
@@ -28,8 +28,8 @@ export default function decorate(block) {
   function updateArea() {
     const x = parseFloat(block.dataset.areaX) || 0;
     const y = parseFloat(block.dataset.areaY) || 0;
-    const w = parseFloat(block.dataset.areaWidth) || 100;
-    const h = parseFloat(block.dataset.areaHeight) || 100;
+    const w = parseFloat(block.dataset.areaWidth) || 0;
+    const h = parseFloat(block.dataset.areaHeight) || 0;
     const href = block.dataset.areaHref || "#";
 
     link.href = href;
