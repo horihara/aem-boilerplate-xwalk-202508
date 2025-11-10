@@ -29,8 +29,8 @@ export default function decorate(block) {
     const x = parseFloat(block.dataset.areaX) || 0;
     const y = parseFloat(block.dataset.areaY) || 0;
     const w = parseFloat(block.dataset.areaWidth) || 100;
-    const h = parseFloat(block.dataset.areaHeight) || 10;
-    const href = block.dataset.areaHref || "https://www.adobe.com/jp";
+    const h = parseFloat(block.dataset.areaHeight) || 100;
+    const href = block.dataset.areaHref || "#";
 
     link.href = href;
 
