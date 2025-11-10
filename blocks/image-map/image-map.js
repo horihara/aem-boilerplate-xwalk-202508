@@ -2,40 +2,45 @@
 
 export default function decorate(block) {
   const imgUrl = block.dataset.imageUrl;
-  const mapData = block.dataset.mapAreas
-    ? JSON.parse(block.dataset.mapAreas)
-    : [];
+  const altText = block.dataset.alt || "";
 
-  // 画像要素生成
-  const img = document.createElement("img");
-  img.src = imgUrl;
-  img.alt = block.dataset.alt || "";
+  // 単一クリックエリアのプロパティを取得
+  const x = parseFloat(block.dataset.areaX);
+  const y = parseFloat(block.dataset.areaY);
+  const w = parseFloat(block.dataset.areaWidth);
+  const h = parseFloat(block.dataset.areaHeight);
+  const href = block.dataset.areaHref;
 
-  // マップエリアを重ねるコンテナ
+  // コンテナ
   const container = document.createElement("div");
   container.classList.add("image-map-container");
   container.style.position = "relative";
+
+  // 画像
+  const img = document.createElement("img");
+  img.src = imgUrl;
+  img.alt = altText;
   container.appendChild(img);
 
-  // クリック領域を生成
-  mapData.forEach((area) => {
+  // クリックエリアが有効なら描画
+  if (!isNaN(x) && !isNaN(y) && !isNaN(w) && !isNaN(h) && href) {
     const link = document.createElement("a");
-    link.href = area.href;
+    link.href = href;
     link.target = "_blank";
     link.classList.add("clickable-area");
 
     Object.assign(link.style, {
       position: "absolute",
-      left: `${area.x}%`,
-      top: `${area.y}%`,
-      width: `${area.width}%`,
-      height: `${area.height}%`,
+      left: `${x}%`,
+      top: `${y}%`,
+      width: `${w}%`,
+      height: `${h}%`,
       border: "2px dashed rgba(255,0,0,0.4)",
-      cursor: "pointer",
+      cursor: "pointer"
     });
 
     container.appendChild(link);
-  });
+  }
 
   block.innerHTML = "";
   block.appendChild(container);

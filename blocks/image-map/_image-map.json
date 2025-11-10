@@ -45,54 +45,39 @@
           "required": false
         },
         {
-          "component": "objectarray",
-          "name": "mapAreas",
-          "label": "Clickable Areas",
-          "valueType": "object",
-          "multi": true,
-          "required": false,
-          "items": {
-            "component": "group",
-            "name": "mapArea",
-            "label": "Clickable Area",
-            "fields": [
-              {
-                "component": "number",
-                "name": "x",
-                "label": "Left (%)",
-                "valueType": "number",
-                "required": true
-              },
-              {
-                "component": "number",
-                "name": "y",
-                "label": "Top (%)",
-                "valueType": "number",
-                "required": true
-              },
-              {
-                "component": "number",
-                "name": "width",
-                "label": "Width (%)",
-                "valueType": "number",
-                "required": true
-              },
-              {
-                "component": "number",
-                "name": "height",
-                "label": "Height (%)",
-                "valueType": "number",
-                "required": true
-              },
-              {
-                "component": "text",
-                "name": "href",
-                "label": "Link URL",
-                "valueType": "string",
-                "required": true
-              }
-            ]
-          }
+          "component": "number",
+          "name": "areaX",
+          "label": "Area X (%)",
+          "valueType": "number",
+          "description": "クリックエリアの左位置（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaY",
+          "label": "Area Y (%)",
+          "valueType": "number",
+          "description": "クリックエリアの上位置（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaWidth",
+          "label": "Area Width (%)",
+          "valueType": "number",
+          "description": "クリックエリアの幅（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaHeight",
+          "label": "Area Height (%)",
+          "valueType": "number",
+          "description": "クリックエリアの高さ（%）"
+        },
+        {
+          "component": "text",
+          "name": "areaHref",
+          "label": "Area Link URL",
+          "valueType": "string",
+          "description": "クリック時のリンクURL"
         }
       ]
     }
