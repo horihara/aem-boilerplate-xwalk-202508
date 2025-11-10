@@ -22,17 +22,18 @@
       "fields": [
         {
           "component": "reference",
-          "valueType": "string",
           "name": "image",
           "label": "Image",
-          "multi": false
+          "valueType": "string",
+          "required": true,
+          "description": "表示する画像のURLを指定します。"
         },
         {
           "component": "text",
           "name": "alt",
           "label": "Alt Text",
           "valueType": "string",
-          "required": false
+          "description": "画像の代替テキスト"
         },
         {
           "component": "number",

@@ -49,7 +49,7 @@
       "components": [
         "text",
         "image",
-        "image-map",
+        "imagemap",
         "button",
         "title"
       ]

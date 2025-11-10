@@ -1,21 +1,18 @@
 // /blocks/imagemap/imagemap.js
 
 export default function decorate(block) {
+  // コンテナ名を修正
   const container = document.createElement("div");
   container.classList.add("imagemap-container");
   container.style.position = "relative";
 
-  // 修正: data-image に対応
-  const imgUrl = block.dataset.image;
-  const altText = block.dataset.alt || "";
-
-  // 画像作成
+  // 画像
   const img = document.createElement("img");
-  img.src = imgUrl;
-  img.alt = altText;
+  img.src = block.dataset.image;
+  img.alt = block.dataset.alt || "";
   container.appendChild(img);
 
-  // クリックエリア要素
+  // クリックエリア
   const link = document.createElement("a");
   link.classList.add("clickable-area");
   link.target = "_blank";
@@ -45,12 +42,13 @@ export default function decorate(block) {
     });
   }
 
-  // 初期表示
+  // 初期描画
   updateArea();
 
-  // Universal Editor 編集画面で変更されたときに反映
+  // Universal Editor 上で変更されたときに即反映
   const observer = new MutationObserver(updateArea);
   observer.observe(block, { attributes: true, attributeFilter: [
-    "data-area-x", "data-area-y", "data-area-width", "data-area-height", "data-area-href", "data-image", "data-alt"
+    "data-image", "data-alt",
+    "data-area-x", "data-area-y", "data-area-width", "data-area-height", "data-area-href"
   ]});
 }
