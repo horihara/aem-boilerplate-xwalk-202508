@@ -1,8 +1,8 @@
-// /blocks/image-map/image-map.js
+// /blocks/imagemap/imagemap.js
 
 export default function decorate(block) {
   const container = document.createElement("div");
-  container.classList.add("image-map-container");
+  container.classList.add("imagemap-container");
   container.style.position = "relative";
 
   // 修正: data-image に対応
