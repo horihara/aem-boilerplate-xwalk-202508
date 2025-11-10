@@ -1,0 +1,14 @@
+/* /blocks/image-map/image-map.css */
+.image-map-container {
+  display: inline-block;
+  position: relative;
+}
+
+.image-map-container img {
+  max-width: 100%;
+  display: block;
+}
+
+.image-map-container .clickable-area:hover {
+  border-color: rgba(255, 0, 0, 0.8);
+}

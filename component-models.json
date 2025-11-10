@@ -216,43 +216,71 @@
     ]
   },
   {
-    "id": "quote",
+    "id": "image-map",
     "fields": [
       {
-        "component": "richtext",
-        "name": "quote",
-        "value": "",
-        "label": "Quote",
-        "valueType": "string"
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
+        "name": "alt",
+        "label": "Alt Text",
         "valueType": "string",
-        "name": "author",
-        "label": "Author",
-        "value": ""
+        "required": false
       },
       {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Background Color",
-        "description": "The quote background color",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Red",
-            "value": "bg-red"
-          },
-          {
-            "name": "Green",
-            "value": "bg-green"
-          },
-          {
-            "name": "Blue",
-            "value": "bg-blue"
-          }
-        ]
+        "component": "objectarray",
+        "name": "mapAreas",
+        "label": "Clickable Areas",
+        "valueType": "object",
+        "multi": true,
+        "required": false,
+        "items": {
+          "component": "group",
+          "name": "mapArea",
+          "label": "Clickable Area",
+          "fields": [
+            {
+              "component": "number",
+              "name": "x",
+              "label": "Left (%)",
+              "valueType": "number",
+              "required": true
+            },
+            {
+              "component": "number",
+              "name": "y",
+              "label": "Top (%)",
+              "valueType": "number",
+              "required": true
+            },
+            {
+              "component": "number",
+              "name": "width",
+              "label": "Width (%)",
+              "valueType": "number",
+              "required": true
+            },
+            {
+              "component": "number",
+              "name": "height",
+              "label": "Height (%)",
+              "valueType": "number",
+              "required": true
+            },
+            {
+              "component": "text",
+              "name": "href",
+              "label": "Link URL",
+              "valueType": "string",
+              "required": true
+            }
+          ]
+        }
       }
     ]
   }

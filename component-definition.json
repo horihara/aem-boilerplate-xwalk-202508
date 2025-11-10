@@ -158,17 +158,25 @@
           }
         },
         {
-          "title": "Quote",
-          "id": "quote",
+          "title": "Image Map",
+          "id": "image-map",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Quote",
-                  "model": "quote",
-                  "quote": "<p>Think, McFly! Think!</p>",
-                  "author": "Biff Tannen"
+                  "name": "Image Map",
+                  "model": "image-map",
+                  "alt": "Default alt text",
+                  "mapAreas": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 100,
+                      "href": ""
+                    }
+                  ]
                 }
               }
             }

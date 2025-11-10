@@ -1,0 +1,101 @@
+{
+  "definitions": [
+    {
+      "title": "Image Map",
+      "id": "image-map",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Image Map",
+              "model": "image-map",
+              "alt": "Default alt text",
+              "mapAreas": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 100,
+                  "height": 100,
+                  "href": ""
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image-map",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "alt",
+          "label": "Alt Text",
+          "valueType": "string",
+          "required": false
+        },
+        {
+          "component": "objectarray",
+          "name": "mapAreas",
+          "label": "Clickable Areas",
+          "valueType": "object",
+          "multi": true,
+          "required": false,
+          "items": {
+            "component": "group",
+            "name": "mapArea",
+            "label": "Clickable Area",
+            "fields": [
+              {
+                "component": "number",
+                "name": "x",
+                "label": "Left (%)",
+                "valueType": "number",
+                "required": true
+              },
+              {
+                "component": "number",
+                "name": "y",
+                "label": "Top (%)",
+                "valueType": "number",
+                "required": true
+              },
+              {
+                "component": "number",
+                "name": "width",
+                "label": "Width (%)",
+                "valueType": "number",
+                "required": true
+              },
+              {
+                "component": "number",
+                "name": "height",
+                "label": "Height (%)",
+                "valueType": "number",
+                "required": true
+              },
+              {
+                "component": "text",
+                "name": "href",
+                "label": "Link URL",
+                "valueType": "string",
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

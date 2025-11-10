@@ -10,13 +10,13 @@
     "components": [
       "text",
       "image",
+      "image-map",
       "button",
       "title",
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "quote"
+      "fragment"
     ]
   },
   {
@@ -36,6 +36,7 @@
     "components": [
       "text",
       "image",
+      "image-map",
       "button",
       "title"
     ]

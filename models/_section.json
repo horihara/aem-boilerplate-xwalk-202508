@@ -45,6 +45,7 @@
       "components": [
         "text",
         "image",
+        "image-map",
         "button",
         "title",
         "hero",
