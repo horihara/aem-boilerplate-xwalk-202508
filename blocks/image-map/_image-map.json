@@ -1,0 +1,77 @@
+{
+  "definitions": [
+    {
+      "title": "Image-Map",
+      "id": "image-map",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Image-Map",
+              "model": "image-map"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image-map",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image",
+          "valueType": "string",
+          "required": true,
+          "description": "表示する画像のURLを指定します。"
+        },
+        {
+          "component": "text",
+          "name": "alt",
+          "label": "Alt Text",
+          "valueType": "string",
+          "description": "画像の代替テキスト"
+        },
+        {
+          "component": "number",
+          "name": "areaX",
+          "label": "Area X (%)",
+          "valueType": "number",
+          "description": "クリックエリアの左位置（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaY",
+          "label": "Area Y (%)",
+          "valueType": "number",
+          "description": "クリックエリアの上位置（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaWidth",
+          "label": "Area Width (%)",
+          "valueType": "number",
+          "description": "クリックエリアの幅（%）"
+        },
+        {
+          "component": "number",
+          "name": "areaHeight",
+          "label": "Area Height (%)",
+          "valueType": "number",
+          "description": "クリックエリアの高さ（%）"
+        },
+        {
+          "component": "text",
+          "name": "areaHref",
+          "label": "Area Link URL",
+          "valueType": "string",
+          "description": "クリック時のリンクURL"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
