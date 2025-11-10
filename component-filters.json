@@ -11,6 +11,7 @@
       "text",
       "image",
       "imagemap",
+      "horiharaimagemap",
       "button",
       "title",
       "hero",
@@ -37,6 +38,7 @@
       "text",
       "image",
       "imagemap",
+      "horiharaimagemap",
       "button",
       "title"
     ]
