@@ -28,9 +28,9 @@ export default function decorate(block) {
   function updateArea() {
     const x = parseFloat(block.dataset.areaX) || 0;
     const y = parseFloat(block.dataset.areaY) || 0;
-    const w = parseFloat(block.dataset.areaWidth) || 0;
-    const h = parseFloat(block.dataset.areaHeight) || 0;
-    const href = block.dataset.areaHref || "#";
+    const w = parseFloat(block.dataset.areaWidth) || 100;
+    const h = parseFloat(block.dataset.areaHeight) || 10;
+    const href = block.dataset.areaHref || "https://www.adobe.com/jp";
 
     link.href = href;
 
