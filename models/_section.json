@@ -46,6 +46,7 @@
         "text",
         "image",
         "imagemap",
+        "image-map",
         "button",
         "title",
         "hero",
