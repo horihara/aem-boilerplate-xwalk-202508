@@ -12,7 +12,7 @@ export default function decorate(block) {
   // 画像作成
   const img = document.createElement("img");
   img.src = imgUrl;
-  img.alt = altText;
+  img.alt = altText || "DEBUG ALT TEXT";
   container.appendChild(img);
 
   // クリックエリア要素
