@@ -2,6 +2,7 @@
   margin: 0 auto;
   padding: 0 24px;
   max-width: 900px;
+  background-color: darkgray;
 }
 
 @media (width >= 900px) {
