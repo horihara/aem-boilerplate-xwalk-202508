@@ -1,59 +1,41 @@
-.block.quote {
-    background-color: tan;
-    padding: 0 0 24px;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+.quote blockquote {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 900px;
 }
 
-.block.quote blockquote {
-    margin: 16px;
-    text-indent: 0;
+@media (width >= 900px) {
+  .quote blockquote {
+    padding: 0 32px;
+  }
 }
 
-.block.quote > div:last-child > div {
-    margin: 0 16px;
-    font-size: small;
-    font-style: italic;
-    position: relative;
+.quote blockquote .quote-quotation {
+  font-size: 120%;
 }
 
-.block.quote > div:last-child > div::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 5px;
-    width: 30px;
-    background-color: darkgray;
-}.block.quote {
-    background-color: #ccc;
-    padding: 0 0 24px;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+.quote blockquote .quote-quotation > :first-child {
+  text-indent: -0.5ch;
 }
 
-.block.quote blockquote {
-    margin: 16px;
-    text-indent: 0;
+.quote blockquote .quote-quotation > :first-child::before,
+.quote blockquote .quote-quotation > :last-child::after {
+  line-height: 0;
 }
 
-.block.quote > div:last-child > div {
-    margin: 0 16px;
-    font-size: small;
-    font-style: italic;
-    position: relative;
+.quote blockquote .quote-quotation > :first-child::before {
+  content: "“";
 }
 
-.block.quote > div:last-child > div::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 5px;
-    width: 30px;
-    background-color: darkgray;
+.quote blockquote .quote-quotation > :last-child::after {
+  content: "”";
+}
+
+.quote blockquote .quote-attribution {
+  text-align: right;
+}
+
+.quote blockquote .quote-attribution > :first-child::before {
+  content: "—";
+  padding-right: 0.5ch;
 }
