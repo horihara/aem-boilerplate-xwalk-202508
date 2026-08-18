@@ -89,7 +89,7 @@ function setStatus(element, message, type = '') {
   element.textContent = message;
   element.className = `author-search__status ${type ? `author-search__status--${type}` : ''}`.trim();
 }
-
+/**
 async function fetchAuthors(tagKeyword) {
   const response = await fetch(buildQueryUrl(tagKeyword), {
     method: 'GET',
@@ -106,6 +106,124 @@ async function fetchAuthors(tagKeyword) {
   }
 
   return payload.data?.edsDemoAuthorInfoList?.items || [];
+}
+**/
+
+async function fetchAuthors(tagKeyword) {
+  const requestUrl = buildQueryUrl(tagKeyword);
+  const pageOrigin = window.location.origin;
+  const requestOrigin = new URL(requestUrl, window.location.href).origin;
+
+  console.groupCollapsed('[author-search] GraphQL request');
+
+  console.log('Request information:', {
+    tagKeyword,
+    requestUrl,
+    pageOrigin,
+    requestOrigin,
+    crossOrigin: pageOrigin !== requestOrigin,
+  });
+
+  try {
+    let response;
+
+    try {
+      response = await fetch(requestUrl, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+    } catch (error) {
+      // CORS またはネットワークエラーの場合、
+      // response を受け取る前にここへ到達します。
+      console.error(
+        '[author-search] fetch() failed before a readable response was received.',
+        {
+          name: error.name,
+          message: error.message,
+          requestUrl,
+          pageOrigin,
+          requestOrigin,
+          likelyCorsIssue: pageOrigin !== requestOrigin,
+        },
+      );
+
+      console.error(
+        '[author-search] If the URL works directly in a browser but fetch() fails, ' +
+        'check the CORS configuration on the AEM Publish environment.',
+      );
+
+      throw error;
+    }
+
+    console.log('HTTP response:', {
+      status: response.status,
+      statusText: response.statusText,
+      ok: response.ok,
+      contentType: response.headers.get('content-type'),
+    });
+
+    // response.json() の代わりに text() で一度受け取り、
+    // JSON パース前後の状態を確認します。
+    const responseBody = await response.text();
+
+    console.log('Response body length:', responseBody.length);
+
+    if (!response.ok) {
+      console.error(
+        '[author-search] HTTP error response preview:',
+        responseBody.slice(0, 500),
+      );
+
+      throw new Error(`GraphQL request failed: HTTP ${response.status}`);
+    }
+
+    let payload;
+
+    try {
+      payload = JSON.parse(responseBody);
+    } catch (error) {
+      console.error('[author-search] Response is not valid JSON:', {
+        name: error.name,
+        message: error.message,
+        responsePreview: responseBody.slice(0, 500),
+      });
+
+      throw new Error('GraphQL response was not valid JSON');
+    }
+
+    console.log('GraphQL response keys:', Object.keys(payload));
+    console.log(
+      'GraphQL error count:',
+      Array.isArray(payload.errors) ? payload.errors.length : 0,
+    );
+
+    if (payload.errors?.length) {
+      console.error('[author-search] GraphQL errors:', payload.errors);
+
+      throw new Error(
+        payload.errors.map((error) => error.message).join('; '),
+      );
+    }
+
+    const items = payload.data?.edsDemoAuthorInfoList?.items || [];
+
+    console.log('[author-search] Search result count:', items.length);
+
+    // 個人情報を含む email / tel はログ出力せず、
+    // 件数・氏名・パスだけを確認します。
+    console.table(
+      items.map((item) => ({
+        name: item.name,
+        path: item._path,
+      })),
+    );
+
+    return items;
+  } finally {
+    console.groupEnd();
+  }
 }
 
 function renderResults(results, resultsContainer, statusElement) {
