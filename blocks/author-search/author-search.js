@@ -25,8 +25,8 @@ function readAuthoredValues(block) {
 
 function buildQueryUrl(tagKeyword) {
   const params = [
-    `folderPath=${encodeURIComponent(CF_FOLDER_PATH)}`,
-    `jobtitleTag=${encodeURIComponent(tagKeyword)}`,
+    `folderPath=${CF_FOLDER_PATH}`,
+    `jobtitleTag=${tagKeyword}`,
   ].join(';');
   // Persisted Query の変数部分全体をエンコードする
   return `${GRAPHQL_QUERY_BASE}${encodeURIComponent(`;${params}`)}`;
