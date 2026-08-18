@@ -28,7 +28,8 @@ function buildQueryUrl(tagKeyword) {
     `folderPath=${encodeURIComponent(CF_FOLDER_PATH)}`,
     `jobtitleTag=${encodeURIComponent(tagKeyword)}`,
   ].join(';');
-  return `${GRAPHQL_QUERY_BASE};${params}`;
+  // Persisted Query の変数部分全体をエンコードする
+  return `${GRAPHQL_QUERY_BASE}${encodeURIComponent(`;${params}`)}`;
 }
 
 function normalizeText(value) {
