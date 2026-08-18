@@ -17,7 +17,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "author-search"
     ]
   },
   {
@@ -40,7 +41,9 @@
       "imagemap",
       "horiharaimagemap",
       "button",
-      "title"
+      "title",
+      "cloumns",
+      "author-search"
     ]
   }
 ]

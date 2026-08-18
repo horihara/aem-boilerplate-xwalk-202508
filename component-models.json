@@ -324,5 +324,26 @@
         "description": "クリック時のリンクURL"
       }
     ]
+  },
+  {
+    "id": "author-search",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "valueType": "string",
+        "value": "著者検索",
+        "label": "見出し",
+        "description": "検索ブロックの見出しです。"
+      },
+      {
+        "component": "text",
+        "name": "tagKeyword",
+        "valueType": "string",
+        "value": "field-engineer",
+        "label": "初期検索タグ",
+        "description": "初期表示時に検索するタグ値です。例: field-engineer"
+      }
+    ]
   }
 ]

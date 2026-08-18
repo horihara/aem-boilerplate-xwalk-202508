@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Author Search",
+      "id": "author-search",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Author Search",
+              "model": "author-search",
+              "title": "著者検索",
+              "tagKeyword": "field-engineer"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "author-search",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "valueType": "string",
+          "value": "著者検索",
+          "label": "見出し",
+          "description": "検索ブロックの見出しです。"
+        },
+        {
+          "component": "text",
+          "name": "tagKeyword",
+          "valueType": "string",
+          "value": "field-engineer",
+          "label": "初期検索タグ",
+          "description": "初期表示時に検索するタグ値です。例: field-engineer"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

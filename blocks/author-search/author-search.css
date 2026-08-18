@@ -1,0 +1,129 @@
+.author-search {
+  --author-search-border: #d9d9d9;
+  --author-search-muted: #5f6368;
+  --author-search-accent: #1473e6;
+  --author-search-surface: #f8f8f8;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.author-search__heading {
+  margin: 0 0 1.25rem;
+}
+
+.author-search__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.author-search__input-label {
+  flex: 1 1 100%;
+  font-weight: 700;
+}
+
+.author-search__input {
+  min-width: 16rem;
+  flex: 1 1 20rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #6e6e6e;
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+.author-search__button {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--author-search-accent);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.author-search__button:hover,
+.author-search__button:focus-visible {
+  background: #0d66d0;
+}
+
+.author-search__button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.author-search__status {
+  min-height: 1.5rem;
+  margin: 0 0 1rem;
+  color: var(--author-search-muted);
+}
+
+.author-search__status--success {
+  color: #2c6e49;
+}
+
+.author-search__status--empty,
+.author-search__status--error {
+  color: #b40000;
+}
+
+.author-search__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.author-search__card {
+  padding: 1.25rem;
+  border: 1px solid var(--author-search-border);
+  border-radius: 0.5rem;
+  background: var(--author-search-surface);
+}
+
+.author-search__name {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.author-search__details {
+  margin: 0;
+}
+
+.author-search__field {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.author-search__label {
+  color: var(--author-search-muted);
+  font-size: 0.875rem;
+}
+
+.author-search__value {
+  margin: 0;
+}
+
+.author-search__value[href] {
+  color: var(--author-search-accent);
+}
+
+.author-search__empty {
+  padding: 1rem;
+  border: 1px dashed var(--author-search-border);
+  color: var(--author-search-muted);
+}
+
+@media (max-width: 600px) {
+  .author-search__button,
+  .author-search__input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
