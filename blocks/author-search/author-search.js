@@ -7,7 +7,7 @@
  *   2. tagKeyword
  */
 
-const GRAPHQL_QUERY_BASE = 'https://publish-p139028-e1411475.adobeaemcloud.com/graphql/execute.json/horihara-universal-editor-xwalk-202508/AuthorInfoByJobtitleTag';
+const GRAPHQL_QUERY_BASE = 'https://author-p139028-e1411475.adobeaemcloud.com/graphql/execute.json/horihara-universal-editor-xwalk-202508/AuthorInfoByJobtitleTag';
 const CF_FOLDER_PATH = '/content/dam/horihara-universal-editor-xwalk-202508/cf/';
 const DEFAULT_TITLE = '著者検索';
 const DEFAULT_TAG = 'field-engineer';
